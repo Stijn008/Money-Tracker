@@ -1,7 +1,10 @@
 package Tickets;
 
-public abstract class SplitBehaviour{
-    public float getBalance(expenses xxx){
-        
-    }
+import Expense.Expense;
+
+import java.util.ArrayList;
+import java.util.Dictionary;
+
+public interface SplitBehaviour{
+    public Dictionary<String, Float> getBalance(ArrayList<Expense> expenses);
 }

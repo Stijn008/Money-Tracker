@@ -1,4 +1,4 @@
-package Split;
+package Tickets;
 
 public class Split extends SplitBehaviour{
     public Split() {}

@@ -1,10 +1,12 @@
-package Tickets;
+package TicketFactory;
 
 import Person.Person;
+import Tickets.Ticket;
+import SavedTicketDatabase.TicketController;
 
-public class SplitTicketFactory extends TicketFactory{
+public class NoSplitTicketFactory extends TicketFactory {
 
-    public SplitTicketFactory(TicketController controller) {
+    public NoSplitTicketFactory(TicketController controller) {
         super(controller);
     }
 

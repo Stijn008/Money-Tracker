@@ -1,5 +1,7 @@
 package Expense;
 
+import Person.Person;
+
 public class Parkingexpense extends Expense{
     private float hourlyCost;
 

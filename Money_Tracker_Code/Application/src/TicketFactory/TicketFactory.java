@@ -1,6 +1,8 @@
-package Tickets;
+package TicketFactory;
 
 import Person.Person;
+import Tickets.Ticket;
+import SavedTicketDatabase.TicketController;
 
 public abstract class TicketFactory {
     private TicketController controller;

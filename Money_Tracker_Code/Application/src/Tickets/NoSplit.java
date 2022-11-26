@@ -1,8 +1,8 @@
-package Split;
+package Tickets;
 
 public class NoSplit extends SplitBehaviour{
     public NoSplit() {}
-    public float getBalance(expenses xxx) {
+    public float getBalance(Expense xxx) {
         return super.getBalance(xxx);
     }
 

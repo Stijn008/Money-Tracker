@@ -1,5 +1,7 @@
 package Expense;
 
+import Person.Person;
+
 public class EntranceExpense extends Expense {
     private Integer discount;
 

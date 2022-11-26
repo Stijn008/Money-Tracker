@@ -1,4 +1,6 @@
-package Tickets;
+package SavedTicketDatabase;
+
+import Tickets.Ticket;
 
 public class SavedTicketDatabase {
     private Ticket[ xxx] savedTickets;

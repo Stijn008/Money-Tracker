@@ -13,12 +13,22 @@ public abstract class Expense {
         this.person = person;
     }
 
-    public float getCost() {
+    public float getPrice() {
         return price;
     }
 
-    public abstract String toString() {
-
+    public String getName() {
+        return name;
     }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public String toString() {
+        String str = String.format("%-20s"+"%-20s"+"€%-20f",name,person.getName(),price);
+        return str;
+    }
+
 
 }

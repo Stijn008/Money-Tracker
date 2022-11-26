@@ -9,7 +9,9 @@ public class TransportExpense extends Expense{
 
     @Override
     public String toString() {
-        return null;
+        String s = "Parking";
+        String str = String.format("%-20s"+super.toString(),s);
+        return str;
     }
 
 }

@@ -11,13 +11,10 @@ public class Parkingexpense extends Expense{
     }
 
     @Override
-    public float getCost() {
-        return super.getCost() + valetCost;
-    }
-
-    @Override
     public String toString() {
-        return null;
+        String s = "Parking";
+        String str = String.format("%-20s"+ super.toString() +"%-20d",s, valetCost);
+        return str;
     }
 
 

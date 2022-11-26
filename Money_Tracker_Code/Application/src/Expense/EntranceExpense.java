@@ -12,12 +12,14 @@ public class EntranceExpense extends Expense {
 
     @Override
     public float getCost() {
-        return getPrice() * (100 - discount);
+        return getPrice() ;
     }
 
     @Override
     public String toString() {
-        return null;
+        String s = "Entrance";
+        String str = String.format("%-20s"+super.toString()+"%-20d",s, discount);
+        return str;
     }
 
 }

@@ -9,6 +9,8 @@ public class DrinkExpense extends Victualexpense{
 
     @Override
     public String toString() {
-        return null;
+        String s = "Drink";
+        String str = String.format("%-20s"+super.toString(),s);
+        return str;
     }
 }

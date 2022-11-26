@@ -12,9 +12,9 @@ public class Ticket {
     private SplitBehaviour splitBehaviour;
     private float totalCost;
 
-    public Ticket(String name, Date date, Person payer, xxx expenses, SplitBehaviour splitBehaviour, float totalCost) {
+
+    public Ticket(String name, Person payer, xxx expenses, SplitBehaviour splitBehaviour, float totalCost) {
         this.name = name;
-        this.date = date;
         this.payer = payer;
         this.expenses = expenses;
         this.splitBehaviour = splitBehaviour;

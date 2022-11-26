@@ -10,7 +10,7 @@ public class SavedTicketDatabase {
     public Ticket getTicket(String name){
         return null;
     }
-    public void addTicket(String name ,String ticket){}
-    public void addObserver(Observer observer){}
-    public void notifyObserver(Ticket ticket){}
+    public void addTicket(String name ,String ticket) {}
+    public void addObserver(Observer observer) {}
+    public void notifyObserver(Ticket ticket) {}
 }

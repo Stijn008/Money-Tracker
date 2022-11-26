@@ -1,8 +1,10 @@
 package Iterator;
 
-public class DatabaseIterator implements Iterator{
+import java.util.List;
+
+public class DatabaseIterator implements Iterator {
     private Integer index;
-    private Entry[xxx] = entries ;
+    private List<xxx> entries ;
 
     public DatabaseIterator(Integer index, Entry[xxx] entries) {
         this.index = index;

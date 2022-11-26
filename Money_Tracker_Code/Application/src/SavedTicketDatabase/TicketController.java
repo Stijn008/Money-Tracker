@@ -8,7 +8,7 @@ public class TicketController {
     public TicketController(SavedTicketDatabase database) {
         this.database = database;
     }
-    public void saveTicket(SavedTicketDatabase db){}
+    public void saveTicket(SavedTicketDatabase db) {}
     public Ticket getTicket(String name){
         return null;
     }

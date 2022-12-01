@@ -13,16 +13,16 @@ public abstract class Expense {
         this.person = person;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
     public String getName() {
         return name;
     }
 
     public Person getPerson() {
         return person;
+    }
+
+    public float getCost() {
+        return price;
     }
 
     public String toString() {

@@ -1,18 +1,21 @@
 package Tickets;
 
 import Expense.Expense;
+import Person.Person;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class NoSplit implements SplitBehaviour {
     public NoSplit() {}
     public Dictionary<String, Float> getBalance(ArrayList<Expense> expenses) {
-        ArrayList<String> personNames = expenses.stream()
+        List<String> personNames = expenses.stream()
                 .map(obj -> (Expense) obj)
                 .map(Expense::getPerson)
+                .map(Person::getName)
                 .distinct()
                 .collect(Collectors.toList());
 

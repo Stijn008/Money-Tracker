@@ -1,27 +1,26 @@
 package Iterator;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class DatabaseIterator implements Iterator {
-    private Integer index;
-    private List<xxx> entries ;
+public class DatabaseIterator<T> implements Iterator {
+    private int index=0;
+    private ArrayList<T> entries;
 
-    public DatabaseIterator(Integer index, Entry[xxx] entries) {
-        this.index = index;
-
+    public DatabaseIterator(ArrayList<T> entries) {
+        this.entries = entries;
     }
 
     @Override
     public void reset() {
-
+        index = 0;
     }
 
     @Override
     public boolean hasNext() {
-        return false;
+        return (index < entries.size()-1);
     }
 
-    public Entry next(){
-        return null;
+    public T next(){
+        return entries.get(index++);
     }
 }

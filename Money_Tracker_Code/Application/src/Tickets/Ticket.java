@@ -17,7 +17,6 @@ public class Ticket {
     private SplitBehaviour splitBehaviour;
     private float totalCost = 0;
 
-
     public Ticket(String name, Person payer) {
         this.name = name;
         this.date = new Date();
@@ -37,6 +36,14 @@ public class Ticket {
         } else {
             this.splitBehaviour = new NoSplit();
         }
+    }
+
+    public ArrayList<Expense> getExpenses() {
+        return expenses;
+    }
+
+    public void setExpenses(ArrayList<Expense> expenses) {
+        this.expenses = expenses;
     }
 
     public Dictionary<String, Float> getBalance () {

@@ -1,13 +1,16 @@
 package Database;
 
-public class PersonDatabase<T> extends Database {
-    private PersonDatabase<T> uniqueInstance =null;
-    public PersonDatabase() {}
+public class PersonDatabase<T> extends Database{
+    private static PersonDatabase uniqueInstance;
 
-    public PersonDatabase<T> getInstance() {
-        if (uniqueInstance == null)
-            uniqueInstance = new PersonDatabase<T>();
-        return uniqueInstance;
+    public PersonDatabase() {
+        this.uniqueInstance = uniqueInstance;
     }
 
+    public static PersonDatabase getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new PersonDatabase();
+        }
+        return uniqueInstance;
+    }
 }

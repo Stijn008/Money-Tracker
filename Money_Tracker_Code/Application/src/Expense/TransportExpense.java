@@ -2,7 +2,7 @@ package Expense;
 
 import Person.Person;
 
-public class TransportExpense extends Expense {
+public class TransportExpense extends Expense{
     public TransportExpense(String name, float price, Person person) {
         super(name, price, person);
     }

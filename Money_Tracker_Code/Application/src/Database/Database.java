@@ -1,16 +1,22 @@
 package Database;
 
 import Iterator.DatabaseIterator;
+import Iterator.Iterator;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public abstract class  Database<T> {
-    private List<T> entries = new ArrayList<>();
-    public Database() {}
-    public DatabaseIterator createlIterator(){
-        return null;
+public abstract class Database<T> {
+    private ArrayList<T> entries;
+
+    public Database() {
+        this.entries = new ArrayList<T>();
     }
-    public void addEntry(T entry) {}
 
+    public DatabaseIterator createIterator() {
+        return new DatabaseIterator<T>(entries);
+    }
+
+    public void addEntry(T entry) {
+        entries.add(entry);
+    }
 }

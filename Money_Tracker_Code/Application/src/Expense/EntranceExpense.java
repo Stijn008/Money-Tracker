@@ -12,7 +12,7 @@ public class EntranceExpense extends Expense {
 
     @Override
     public float getCost() {
-        return getPrice() ;
+        return super.getCost() * (100 - discount);
     }
 
     @Override

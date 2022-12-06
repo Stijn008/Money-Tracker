@@ -1,12 +1,10 @@
 package Expense;
 
-import Person.Person;
-
 public class Parkingexpense extends Expense{
     private float valetCost;
 
-    public Parkingexpense(String name, float price, Person person, float valetCost) {
-        super(name, price, person);
+    public Parkingexpense(String name, float price, String consumer, float valetCost) {
+        super(name, price, consumer);
         this.valetCost = valetCost;
     }
 
@@ -21,7 +19,4 @@ public class Parkingexpense extends Expense{
         String str = String.format("%-20s"+ super.toString() +"%-20d",s, valetCost);
         return str;
     }
-
-
-
 }

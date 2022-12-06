@@ -1,10 +1,5 @@
 package SavedTicketDatabase;
 
-import Expense.Expense;
-import Tickets.Ticket;
-
-import java.util.ArrayList;
-
 public class SavedTicketObserver implements Observer {
     public SavedTicketObserver() {}
 

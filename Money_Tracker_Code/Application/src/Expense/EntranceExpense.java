@@ -1,12 +1,10 @@
 package Expense;
 
-import Person.Person;
-
 public class EntranceExpense extends Expense {
     private Integer discount;
 
-    public EntranceExpense(String name, float price, Person person, Integer discount) {
-        super(name, price, person);
+    public EntranceExpense(String name, float price, String consumer, Integer discount) {
+        super(name, price, consumer);
         this.discount = discount;
     }
 
@@ -21,5 +19,4 @@ public class EntranceExpense extends Expense {
         String str = String.format("%-20s"+super.toString()+"%-20d",s, discount);
         return str;
     }
-
 }

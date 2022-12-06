@@ -1,10 +1,8 @@
 package Expense;
 
-import Person.Person;
-
-public class SnackExpense extends Victualexpense{
-    public SnackExpense(String name, float price, Person person) {
-        super(name, price, person);
+public class SnackExpense extends Victualexpense {
+    public SnackExpense(String name, float price, String consumer) {
+        super(name, price, consumer);
     }
 
     @Override

@@ -1,22 +1,15 @@
 package Database;
 
 import Iterator.DatabaseIterator;
-import Iterator.Iterator;
 
-import java.util.ArrayList;
+public abstract class Database {
+    protected BalanceDBController observer;
 
-public abstract class Database<T> {
-    private ArrayList<T> entries;
+    public Database() {}
 
-    public Database() {
-        this.entries = new ArrayList<T>();
-    }
+    public abstract DatabaseIterator createIterator();
 
-    public DatabaseIterator createIterator() {
-        return new DatabaseIterator<T>(entries);
-    }
-
-    public void addEntry(T entry) {
-        entries.add(entry);
+    public void setObserver(BalanceDBController observer) {
+        this.observer = observer;
     }
 }

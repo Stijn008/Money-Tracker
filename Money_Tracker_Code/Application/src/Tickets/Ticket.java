@@ -1,23 +1,21 @@
 package Tickets;
 
-import Expense.Expense;
-import Person.Person;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Dictionary;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import Expense.Expense;
+import java.util.Date;
 
 public class Ticket {
     private String name;
     private Date date;
-    private Person payer;
+    private String payer;
     private ArrayList<Expense> expenses;
     private SplitBehaviour splitBehaviour;
     private float totalCost = 0;
 
-    public Ticket(String name, Person payer) {
+    public Ticket(String name, String payer) {
         this.name = name;
         this.date = new Date();
         this.payer = payer;
@@ -42,12 +40,12 @@ public class Ticket {
         return expenses;
     }
 
-    public void setExpenses(ArrayList<Expense> expenses) {
-        this.expenses = expenses;
+    public Dictionary<String, Float> getBalance() {
+        return this.splitBehaviour.getBalance(this.payer, this.expenses);
     }
 
-    public Dictionary<String, Float> getBalance () {
-        return this.splitBehaviour.getBalance(this.expenses);
+    public String getPayer() {
+        return payer;
     }
 
     public void display() {
@@ -58,7 +56,7 @@ public class Ticket {
         boolean split = splitBehaviour instanceof Split;
         System.out.println("totalCost: " + totalCost +
                            "     Date: " + dateFormat.format(date) +
-                           "     Payer: " + payer.getName() +
+                           "     Payer: " + payer +
                            "     Split: " + (splitBehaviour instanceof Split));
 
 

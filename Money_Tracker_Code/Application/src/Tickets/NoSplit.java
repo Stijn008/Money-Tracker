@@ -1,21 +1,18 @@
 package Tickets;
 
-import Expense.Expense;
-import Person.Person;
-
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Dictionary;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import Expense.Expense;
+import java.util.List;
 
 public class NoSplit implements SplitBehaviour {
     public NoSplit() {}
-    public Dictionary<String, Float> getBalance(ArrayList<Expense> expenses) {
+    public Dictionary<String, Float> getBalance(String payer, ArrayList<Expense> expenses) {
         List<String> personNames = expenses.stream()
-                .map(obj -> (Expense) obj)
-                .map(Expense::getPerson)
-                .map(Person::getName)
+                .map(Expense::getConsumer)
+                .filter(p -> p != payer)
                 .distinct()
                 .collect(Collectors.toList());
 
@@ -25,8 +22,8 @@ public class NoSplit implements SplitBehaviour {
             balances.put(name, 0F);
         }
 
-        for (Expense expense:expenses) {
-            String name = expense.getPerson().getName();
+        for (Expense expense : expenses) {
+            String name = expense.getConsumer();
             balances.put(name, balances.get(name) + expense.getCost());
         }
 

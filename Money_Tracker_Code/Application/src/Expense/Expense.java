@@ -1,24 +1,22 @@
 package Expense;
 
-import Person.Person;
-
 public abstract class Expense {
     private String name;
     private float price;
-    private Person person;
+    private String consumer;
 
-    public Expense(String name, float price, Person person) {
+    public Expense(String name, float price, String consumer) {
         this.name = name;
         this.price = price;
-        this.person = person;
+        this.consumer = consumer;
     }
 
     public String getName() {
         return name;
     }
 
-    public Person getPerson() {
-        return person;
+    public String getConsumer() {
+        return consumer;
     }
 
     public float getCost() {
@@ -26,9 +24,7 @@ public abstract class Expense {
     }
 
     public String toString() {
-        String str = String.format("%-20s"+"%-20s"+"€%-20f",name,person.getName(),price);
+        String str = String.format("%-20s"+"%-20s"+"€%-20f",name,consumer,price);
         return str;
     }
-
-
 }

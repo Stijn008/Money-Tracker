@@ -1,10 +1,9 @@
 package Tickets;
 
+import java.util.Dictionary;
+import java.util.ArrayList;
 import Expense.Expense;
 
-import java.util.ArrayList;
-import java.util.Dictionary;
-
 public interface SplitBehaviour{
-    public Dictionary<String, Float> getBalance(ArrayList<Expense> expenses);
+    Dictionary<String, Float> getBalance(String payer, ArrayList<Expense> expenses);
 }

@@ -1,10 +1,8 @@
 package Expense;
 
-import Person.Person;
-
-public class ToiletExpense extends Expense{
-    public ToiletExpense(String name, float price, Person person) {
-        super(name, price, person);
+public class ToiletExpense extends Expense {
+    public ToiletExpense(String name, float price, String consumer) {
+        super(name, price, consumer);
     }
 
     @Override
@@ -13,5 +11,4 @@ public class ToiletExpense extends Expense{
         String str = String.format("%-20s"+super.toString(),s);
         return str;
     }
-
 }

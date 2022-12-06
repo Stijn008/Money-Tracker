@@ -1,10 +1,9 @@
 package SavedTicketDatabase;
 
-import Expense.Expense;
-
-import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.ArrayList;
 import java.util.Hashtable;
+import Expense.Expense;
 
 public class SavedTicketDatabase {
     private Dictionary<String, ArrayList<Expense>> savedTicketInfo;

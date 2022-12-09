@@ -24,14 +24,14 @@ public class SavedTicketDatabase {
 
     public void addTicketInfo(String name, ArrayList<Expense> expenses) {
         savedTicketInfo.put(name, expenses);
-        notifyObservers(name, expenses);
+        notifyObservers(name);
     }
 
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    public void notifyObservers(String name, ArrayList<Expense> expenses) {
+    public void notifyObservers(String name) {
         for (Observer observer:observers) {
             observer.update(name);
         }

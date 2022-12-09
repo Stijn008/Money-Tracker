@@ -6,8 +6,8 @@ import Tickets.Ticket;
 public class TicketController {
     private SavedTicketDatabase database;
 
-    public TicketController(SavedTicketDatabase database) {
-        this.database = database;
+    public TicketController(SavedTicketDatabase db) {
+        this.database = db;
     }
 
     public void saveTicket(String name, Ticket ticket) {

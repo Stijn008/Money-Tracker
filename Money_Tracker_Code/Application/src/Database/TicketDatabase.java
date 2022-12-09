@@ -1,18 +1,17 @@
 package Database;
 
 import Iterator.DatabaseIterator;
-import Tickets.Ticket;
-
 import java.util.ArrayList;
+import Tickets.Ticket;
 
 public class TicketDatabase extends Database {
     private ArrayList<Ticket> entries;
     private static TicketDatabase uniqueInstance;
 
     public TicketDatabase() {
-        this.uniqueInstance = uniqueInstance;
-        this.entries = new ArrayList<Ticket>();
+        this.entries = new ArrayList<>();
     }
+
     public static TicketDatabase getInstance() {
         if (uniqueInstance == null) {
             uniqueInstance = new TicketDatabase();
@@ -24,8 +23,8 @@ public class TicketDatabase extends Database {
         return new DatabaseIterator<>(entries);
     }
 
-    public void notifyObserver(Ticket t) {
-        observer.update(t);
+    public void notifyObserver(Ticket ticket) {
+        observer.update(ticket);
     }
 
     public void addTicket(Ticket entry) {

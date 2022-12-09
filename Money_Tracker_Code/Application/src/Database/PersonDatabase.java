@@ -11,7 +11,6 @@ public class PersonDatabase extends Database {
     private static PersonDatabase uniqueInstance;
 
     public PersonDatabase() {
-        this.uniqueInstance = uniqueInstance;
         this.entries = new Hashtable<>();
     }
 
@@ -30,8 +29,8 @@ public class PersonDatabase extends Database {
         observer.update(person);
     }
 
-    public void addPerson(Person p) {
-        entries.put(p.getName(), p);
-        notifyObserver(p.getName());
+    public void addPerson(Person person) {
+        entries.put(person.getName(), person);
+        notifyObserver(person.getName());
     }
 }

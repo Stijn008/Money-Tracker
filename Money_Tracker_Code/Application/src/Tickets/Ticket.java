@@ -23,6 +23,10 @@ public class Ticket {
         this.splitBehaviour = null;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addExpense(Expense expense) {
         expenses.add(expense);
         totalCost += expense.getCost();

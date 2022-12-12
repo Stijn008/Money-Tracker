@@ -24,7 +24,7 @@ public class Split implements SplitBehaviour {
         Dictionary<String, Float> balances = new Hashtable<String, Float>();
 
         for (String name : personNames) {
-            balances.put(name, totalCost / personNames.size());
+            balances.put(name, -totalCost / personNames.size());
         }
 
         return balances;

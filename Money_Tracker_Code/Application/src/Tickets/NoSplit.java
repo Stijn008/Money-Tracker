@@ -24,7 +24,9 @@ public class NoSplit implements SplitBehaviour {
 
         for (Expense expense : expenses) {
             String name = expense.getConsumer();
-            balances.put(name, balances.get(name) + expense.getCost());
+            if (balances.get(name) != null) {           // if name is not the same as the payer
+                balances.put(name, balances.get(name) - expense.getCost());
+            }
         }
 
         return balances;

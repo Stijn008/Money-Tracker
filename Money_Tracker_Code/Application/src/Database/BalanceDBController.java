@@ -11,9 +11,13 @@ public class BalanceDBController {
 
     public void update(Ticket ticket) {
         database.updateBalance(ticket);
-
     }
-    public void update(String person) {
-        database.addPerson(person);
+
+    public void update(String person, boolean IsAdded) {
+        if (IsAdded) {
+            database.addPerson(person);
+        } else {
+            database.removePerson(person);
+        }
     }
 }

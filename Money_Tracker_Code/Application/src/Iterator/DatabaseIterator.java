@@ -15,7 +15,7 @@ public class DatabaseIterator<T> {
     }
 
     public boolean hasNext() {
-        return (index < entries.size()-1);
+        return (index < entries.size());
     }
 
     public T next(){

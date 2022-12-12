@@ -1,9 +1,9 @@
 package Expense;
 
-public class Parkingexpense extends Expense{
+public class ParkingExpense extends Expense{
     private float valetCost;
 
-    public Parkingexpense(String name, float price, String consumer, float valetCost) {
+    public ParkingExpense(String name, float price, String consumer, float valetCost) {
         super(name, price, consumer);
         this.valetCost = valetCost;
     }

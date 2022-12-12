@@ -25,12 +25,21 @@ public class PersonDatabase extends Database {
         return new DatabaseIterator<>(Collections.list(entries.elements()));
     }
 
-    public void notifyObserver(String person) {
-        observer.update(person);
+    public void notifyObserver(String person, boolean IsAdded) {
+        observer.update(person, IsAdded);
     }
 
     public void addPerson(Person person) {
         entries.put(person.getName(), person);
-        notifyObserver(person.getName());
+        notifyObserver(person.getName(), true);
+    }
+
+    public void removePerson(Person person) {
+        if (entries.get(person.getName()) == null) {
+            System.out.println("Error: Person not found in person database!");
+        } else {
+            entries.remove(person.getName());
+            notifyObserver(person.getName(), false);
+        }
     }
 }

@@ -1,6 +1,6 @@
 package Expense;
 
-public class SnackExpense extends Victualexpense {
+public class SnackExpense extends VictualExpense {
     public SnackExpense(String name, float price, String consumer) {
         super(name, price, consumer);
     }

@@ -1,6 +1,6 @@
 package Expense;
 
-public abstract class Expense {
+public class Expense {
     private String name;
     private float price;
     private String consumer;

@@ -24,18 +24,24 @@ public class BalanceDatabase {
         entries.put(person, new Hashtable<>());
     }
 
+    public void removePerson(String person) {
+        if (entries.get(person) == null) {
+            System.out.println("Error: Person not found in balance database!");
+        } else {
+            entries.remove(person);
+            for (String key : Collections.list(entries.keys())) {
+                if (entries.get(key).get(person) != null) {
+                    Dictionary<String, Float> balances = entries.get(key);
+                    balances.remove(person);
+                    entries.put(key, balances);
+                }
+            }
+        }
+    }
+
     public Dictionary<String, Float> getPersonBalance(String person) {
         return entries.get(person);
     }
-
-    //public float getAmount(String payer, String friend) {
-    //    Dictionary<String, Float> balance = entries.get(payer);
-    //    if (Collections.list(balance.keys()).contains(friend)) {
-    //        return balance.get(friend);
-    //    } else {
-    //        return 0F;
-    //    }
-    //}
 
     public void addAmount(String payer, String friend, float amount) {
         Dictionary<String, Float> balance = entries.get(payer);

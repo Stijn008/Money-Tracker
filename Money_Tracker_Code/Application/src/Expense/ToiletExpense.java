@@ -8,7 +8,7 @@ public class ToiletExpense extends Expense {
     @Override
     public String toString() {
         String s = "Toilet";
-        String str = String.format("%-20s"+super.toString(),s);
+        String str = String.format("%-10s"+super.toString(),s);
         return str;
     }
 }

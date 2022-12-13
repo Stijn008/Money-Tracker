@@ -16,7 +16,7 @@ public class EntranceExpense extends Expense {
     @Override
     public String toString() {
         String s = "Entrance";
-        String str = String.format("%-20s"+super.toString()+"%-20d",s, discount);
+        String str = String.format("%-10s"+super.toString(),s) + "-" + discount + "%";
         return str;
     }
 }

@@ -20,19 +20,19 @@ public class BalanceDatabase {
         return uniqueInstance;
     }
 
-    public void addPerson(String person) {
-        entries.put(person, new Hashtable<>());
+    public void addPerson(String name) {
+        entries.put(name, new Hashtable<>());
     }
 
-    public void removePerson(String person) {
-        if (entries.get(person) == null) {
+    public void removePerson(String name) {
+        if (entries.get(name) == null) {
             System.out.println("Error: Person not found in balance database!");
         } else {
-            entries.remove(person);
+            entries.remove(name);
             for (String key : Collections.list(entries.keys())) {
-                if (entries.get(key).get(person) != null) {
+                if (entries.get(key).get(name) != null) {
                     Dictionary<String, Float> balances = entries.get(key);
-                    balances.remove(person);
+                    balances.remove(name);
                     entries.put(key, balances);
                 }
             }

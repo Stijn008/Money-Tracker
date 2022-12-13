@@ -53,8 +53,8 @@ public class Ticket {
     }
 
     public void display() {
-        System.out.print(String.format("%0"+50+"d",0).replace("0", "-") + name +
-                String.format("%0"+(65-name.length())+"d",0).replace("0", "-"));
+        System.out.print(String.format("%0"+30+"d",0).replace("0", "-") + name +
+                String.format("%0"+(45-name.length())+"d",0).replace("0", "-") + "\n");
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         boolean split = splitBehaviour instanceof Split;
@@ -62,9 +62,13 @@ public class Ticket {
                            "     Date: " + dateFormat.format(date) +
                            "     Payer: " + payer +
                            "     Split: " + (splitBehaviour instanceof Split));
+        System.out.print(String.format("%0" + 75 + "d",0).replace("0", "-")+"\n");
+        System.out.print("TYPE      NAME                CONSUMER  PRICE      EXTRA\n");
 
+        for (Expense expense : expenses) {
+            System.out.println(expense.toString());
+        }
 
-
-        System.out.print(String.format("%0" + 115 + "d",0).replace("0", "-")+"\n");
+        System.out.print(String.format("%0" + 75 + "d",0).replace("0", "-")+"\n\n");
     }
 }

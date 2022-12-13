@@ -34,12 +34,12 @@ public class PersonDatabase extends Database {
         notifyObserver(person.getName(), true);
     }
 
-    public void removePerson(Person person) {
-        if (entries.get(person.getName()) == null) {
+    public void removePerson(String name) {
+        if (entries.get(name) == null) {
             System.out.println("Error: Person not found in person database!");
         } else {
-            entries.remove(person.getName());
-            notifyObserver(person.getName(), false);
+            entries.remove(name);
+            notifyObserver(name, false);
         }
     }
 }

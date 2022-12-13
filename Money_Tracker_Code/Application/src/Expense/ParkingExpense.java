@@ -16,7 +16,7 @@ public class ParkingExpense extends Expense{
     @Override
     public String toString() {
         String s = "Parking";
-        String str = String.format("%-20s"+ super.toString() +"%-20d",s, valetCost);
+        String str = String.format("%-10s"+ super.toString() +"€%-10.2f",s, valetCost);
         return str;
     }
 }

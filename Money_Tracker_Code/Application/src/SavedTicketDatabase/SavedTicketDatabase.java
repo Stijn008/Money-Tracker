@@ -4,10 +4,11 @@ import java.util.Dictionary;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import Expense.Expense;
+import Tickets.Ticket;
 
 public class SavedTicketDatabase {
     private Dictionary<String, ArrayList<Expense>> savedTicketInfo;
-    private ArrayList<Observer> observers;
+    private ArrayList<SavedTicketObserver> observers;
 
     public SavedTicketDatabase() {
         this.savedTicketInfo = new Hashtable<>();
@@ -22,18 +23,18 @@ public class SavedTicketDatabase {
         return savedTicketInfo.get(name);
     }
 
-    public void addTicketInfo(String name, ArrayList<Expense> expenses) {
-        savedTicketInfo.put(name, expenses);
-        notifyObservers(name);
+    public void addTicketInfo(String name, Ticket ticket) {
+        savedTicketInfo.put(name, ticket.getExpenses());
+        notifyObservers(ticket);
     }
 
-    public void addObserver(Observer observer) {
+    public void addObserver(SavedTicketObserver observer) {
         observers.add(observer);
     }
 
-    public void notifyObservers(String name) {
-        for (Observer observer:observers) {
-            observer.update(name);
+    public void notifyObservers(Ticket ticket) {
+        for (SavedTicketObserver observer:observers) {
+            observer.update(ticket);
         }
     }
 }

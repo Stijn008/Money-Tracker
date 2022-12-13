@@ -24,7 +24,7 @@ public class Expense {
     }
 
     public String toString() {
-        String str = String.format("%-20s"+"%-20s"+"€%-20f",name,consumer,price);
+        String str = String.format("%-20s"+"%-10s"+"€%-10.2f",name,consumer,price);
         return str;
     }
 }

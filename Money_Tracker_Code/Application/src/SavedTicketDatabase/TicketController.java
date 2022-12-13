@@ -11,7 +11,7 @@ public class TicketController {
     }
 
     public void saveTicket(String name, Ticket ticket) {
-        database.addTicketInfo(name, ticket.getExpenses());
+        database.addTicketInfo(name, ticket);
     }
 
     public Ticket getTicket(String name, String payer) throws Exception {

@@ -1,10 +1,11 @@
 package SavedTicketDatabase;
 
-public class SavedTicketObserver implements Observer {
+import Tickets.Ticket;
+
+public class SavedTicketObserver {
     public SavedTicketObserver() {}
 
-    @Override
-    public void update(String name) {
-        System.out.println("Ticket named '"+name+"' is saved." );
+    public void update(Ticket ticket) {
+        ticket.display();
     }
 }

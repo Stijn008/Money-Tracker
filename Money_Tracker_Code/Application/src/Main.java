@@ -10,6 +10,7 @@ public class Main {
         facade.createTicket("ticket1", "Joppe", false);
         facade.addExpense("kinepolis parking", 20F, "Joppe", "parking", 5F);
         facade.addExpense("kinepolis parking2", 15F, "Stijn", "parking", 0F);
+        facade.addExpense("kinepolis entrance", 10F, "Stijn", "entrance", 10);
         facade.addExpense("kinepolis toilet", 3F, "Stijn", "toilet", 0F);
         facade.addExpense("kinepolis popcorn", 5F, "Joppe", "snack", 0F);
         facade.rememberTicket();

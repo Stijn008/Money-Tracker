@@ -13,7 +13,7 @@ public class BalanceDBController {
         database.updateBalance(ticket);
     }
 
-    public void update(String person, boolean IsAdded) {
+    public void update(String person, boolean IsAdded) throws Exception {
         if (IsAdded) {
             database.addPerson(person);
         } else {

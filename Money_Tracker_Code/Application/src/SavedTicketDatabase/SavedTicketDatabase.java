@@ -18,7 +18,7 @@ public class SavedTicketDatabase {
     public ArrayList<Expense> getTicketInfo(String name) throws Exception {
         ArrayList<Expense> expenses = savedTicketInfo.get(name);
         if (expenses == null) {
-            throw new Exception("Exception message");
+            throw new Exception("De ticket die u probeert op te halen bestaat niet.");
         }
         return savedTicketInfo.get(name);
     }

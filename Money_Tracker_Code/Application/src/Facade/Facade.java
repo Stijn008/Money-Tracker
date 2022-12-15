@@ -29,10 +29,10 @@ public class Facade {
 
     public Facade() {
         // Person, Ticket & Balance database part (databases & controller/observer)
-        balanceDB = new BalanceDatabase();
+        balanceDB = BalanceDatabase.getInstance();
         balanceDBcontroller = new BalanceDBController(balanceDB);
-        personDB = new PersonDatabase();
-        ticketDB = new TicketDatabase();
+        personDB = PersonDatabase.getInstance();
+        ticketDB = TicketDatabase.getInstance();
 
         // Ticket creation part (factory, controller, observer, ...)
         savedTicketObs = new SavedTicketObserver();
@@ -52,16 +52,24 @@ public class Facade {
         savedTicketDB.addObserver(savedTicketObs);
     }
 
-    public void addFriend(String name) {
+    public void addFriend(String name) throws Exception {
         Person person = new Person(name);
         personDB.addPerson(person);
     }
 
-    public void createTicket(String name, String payer, boolean IsSplit) {
-        if (IsSplit) {
-            ticket = splitFact.getEmptyTicket(name, payer);
+    public void removeFriend(String name) throws Exception {
+        personDB.removePerson(name);
+    }
+
+    public void createTicket(String name, String payer, boolean IsSplit) throws Exception {
+        if (personDB.getPerson(payer) == null) {
+            throw new Exception("De persoon die betaald zit niet in de database van personen.");
         } else {
-            ticket = noSplitFact.getEmptyTicket(name, payer);
+            if (IsSplit) {
+                ticket = splitFact.getEmptyTicket(name, payer);
+            } else {
+                ticket = noSplitFact.getEmptyTicket(name, payer);
+            }
         }
     }
 
@@ -73,8 +81,13 @@ public class Facade {
         }
     }
 
-    public void addExpense(String name, float price, String consumer, String type, float extra) {
+    public void addExpense(String name, float price, String consumer, String type, float extra) throws Exception {
         // Expense should ideally be created using a factory with "type" as one of it's inputs
+        if (personDB.getPerson(consumer) == null) {
+            throw new Exception("De consument zit niet in de database van personen.");
+        } else {
+
+        }
         Expense expense = null;
         switch(type) {
             case "entrance":
@@ -114,7 +127,7 @@ public class Facade {
     }
 
     // Get the balance of the user (from the balance database)
-    public Dictionary<String, Float> getGlobalBill(String user) {
+    public Dictionary<String, Float> getGlobalBill(String user) throws Exception {
         Dictionary<String, Float> balance = balanceDB.getPersonBalance(user);
         return balance;
     }

@@ -24,9 +24,9 @@ public class BalanceDatabase {
         entries.put(name, new Hashtable<>());
     }
 
-    public void removePerson(String name) {
+    public void removePerson(String name) throws Exception {
         if (entries.get(name) == null) {
-            System.out.println("Error: Person not found in balance database!");
+            throw new Exception("Deze persoon zit niet in de database.");
         } else {
             entries.remove(name);
             for (String key : Collections.list(entries.keys())) {
@@ -39,8 +39,12 @@ public class BalanceDatabase {
         }
     }
 
-    public Dictionary<String, Float> getPersonBalance(String person) {
-        return entries.get(person);
+    public Dictionary<String, Float> getPersonBalance(String person) throws Exception {
+        if (entries.get(person) == null) {
+            throw new Exception("Deze persoon heeft geen balance.");
+        } else {
+            return entries.get(person);
+        }
     }
 
     public void addAmount(String payer, String friend, float amount) {

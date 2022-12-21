@@ -86,35 +86,34 @@ public class Facade {
         if (personDB.getPerson(consumer) == null) {
             throw new Exception("De consument zit niet in de database van personen.");
         } else {
-
+            Expense expense = null;
+            switch(type) {
+                case "entrance":
+                    expense = new EntranceExpense(name, price, consumer, (int) extra);
+                    break;
+                case "parking":
+                    expense = new ParkingExpense(name, price, consumer, extra);
+                    break;
+                case "transport":
+                    expense = new TransportExpense(name, price, consumer);
+                    break;
+                case "toilet":
+                    expense = new ToiletExpense(name, price, consumer);
+                    break;
+                case "food":
+                    expense = new FoodExpense(name, price, consumer);
+                    break;
+                case "snack":
+                    expense = new SnackExpense(name, price, consumer);
+                    break;
+                case "drink":
+                    expense = new DrinkExpense(name, price, consumer);
+                    break;
+                default:
+                    expense = new Expense(name, price, consumer);
+            }
+            ticket.addExpense(expense);
         }
-        Expense expense = null;
-        switch(type) {
-            case "entrance":
-                expense = new EntranceExpense(name, price, consumer, (int) extra);
-                break;
-            case "parking":
-                expense = new ParkingExpense(name, price, consumer, extra);
-                break;
-            case "transport":
-                expense = new TransportExpense(name, price, consumer);
-                break;
-            case "toilet":
-                expense = new ToiletExpense(name, price, consumer);
-                break;
-            case "food":
-                expense = new FoodExpense(name, price, consumer);
-                break;
-            case "snack":
-                expense = new SnackExpense(name, price, consumer);
-                break;
-            case "drink":
-                expense = new DrinkExpense(name, price, consumer);
-                break;
-            default:
-                expense = new Expense(name, price, consumer);
-        }
-        ticket.addExpense(expense);
     }
 
     public void addTicket() {

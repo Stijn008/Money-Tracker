@@ -59,8 +59,6 @@ public class AddTicketPanel extends JPanel {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-
-
             } else if (event.getSource() == nosplit){
                 try {
                     facade.createTicket(enterTicket.getText(),enterName.getText(), false);
@@ -73,7 +71,7 @@ public class AddTicketPanel extends JPanel {
                     System.out.println(enterTicket.getText()+" loaded and added to ticket list");
                     facade.loadTicket(enterTicket.getText(),enterName.getText(),true);
                     facade.addTicket();
-                    // gui.changePanel("ExpenseNamePanel");
+                    gui.changePanel("ExpenseNamePanel");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -82,7 +80,7 @@ public class AddTicketPanel extends JPanel {
                     System.out.println(enterTicket.getText()+" loaded and added to ticket list");
                     facade.loadTicket(enterTicket.getText(),enterName.getText(),false);
                     facade.addTicket();
-                    //gui.changePanel("ExpenseNamePanel");
+                    gui.changePanel("ExpenseNamePanel");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
